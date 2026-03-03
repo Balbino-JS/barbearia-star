@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
     <title>Gilded Barbers</title>
 </head>
 
@@ -12,8 +17,8 @@
         <h1>Gilded Barbers</h1>
         <ul>
             <li><a href="#about">Sobre</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#vitrine">Nosso trabalho</a></li>
+            <li><a href="#servicos">Serviçoss</a></li>
             <li><a href="#contact">Contato</a></li>
         </ul>
 
@@ -23,14 +28,14 @@
         <div class="hero-content">
             <h1>EXCLUSIVIDADE EM CADA DETALHE</h1>
             <p>Barbearia de alto padrão para homens que exigem presença e sofisticação.</p>
-            <a href="https://wa.me/5500000000000?text=Quero%20agendar%20na%20Corte%20e%20Dobra" class="btn">AGENDAR
-                AGORA</a>
+            <a href="https://wa.me/5500000000000?text=Quero%20agendar%20na%20Corte%20e%20Dobra"><i
+                    class="fa-brands fa-whatsapp"></i></a>
         </div>
     </section>
 
     <section>
         <div class="sobre">
-            <!-- <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="Barbearia Interior">-->
+            <img src="img/Gemini_Generated_Image_cbk2e5cbk2e5cbk2-removebg-preview.png" alt="Barbearia Interior">
             <div class="sobre-text">
                 <h2>Tradição e Sofisticação</h2>
                 <p>
@@ -42,15 +47,18 @@
     </section>
 
     <!-- VITRINE -->
-    <section class="fade">
-        <h2 style="text-align:center;margin-bottom:60px;font-family:'Cinzel',serif;">Vitrine de Trabalhos</h2>
-        <div class="galeria">
-            <img src="">
-            <img src="">
-            <img src="">
-            <img src="">
-            <img src="">
-            <img src="">
+    <section class="fade" id="vitrine">
+        <h2 style="text-align:center;margin-bottom:60px;font-family:'Cinzel',serif;">Nosso Trabalhos</h2>
+        <div class="galeria-grid">
+            <img src="img/pexels-aviz-3891347.jpg">
+            <img src="img/pexels-khezez-9025142.jpg">
+            <img src="img/pexels-leonardokfn-7781852.jpg">
+            <img src="img/pexels-lukeni-theking-41036885-7298366.jpg">
+            <img src="img/pexels-rdne-8313173.jpg">
+            <img src="img/pexels-salomonjr10-6650040.jpg">
+            <img src="img/pexels-ralph-rabago-3214804.jpg">
+            <img src="img/pexels-ladoo-4146419.jpg">
+            <img src="img/pexels-ilyas-6897800.jpg">
         </div>
     </section>
 
@@ -99,31 +107,17 @@
                 <h3>Selagem</h3>
                 <strong>R$ 80</strong>
             </div>
-
-            <div class="card">
-                <h3>Depilação - Nariz</h3>
-                <strong>R$ 20</strong>
-            </div>
         </div>
     </section>
 
-    <!-- SERVIÇOS PREMIUN -->
-    <section class="servicos">
-        <h2 style="margin-bottom:50px;">Serviços Premium</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Corte Masculino</h3>
-                <p>Consultoria + acabamento na navalha</p>
-                <strong>R$ 70</strong>
-            </div>
-        </div>
-    </section>
+ 
 
     <!-- SOBRE -->
-    <section id="about">
-        <h2 class="section-title">Sobre Nó</h2>
+    <section id="about" class="about-body">
+        <h2 class="section-title">Sobre Nós</h2>
         <div class="about">
-            <img src="sua-foto.jpg" alt="Sua Foto">
+            <img src="img/Gemini_Generated_Image_cbk2e5cbk2e5cbk2.png" alt="Sua Foto">
+            
             <p>
                 Especialista em Visagismo e Estética Masculina
                 A arte de transformar a imagem através da precisão.
@@ -157,20 +151,26 @@
     </section>
 
     <!-- CTA FINAL -->
-    <section class="cta">
+    <section class="cta" id="contato">
         <h2 style="margin-bottom:30px;">Eleve seu visual para outro nível</h2>
-        <a href="#" class="btn">Agendar Agora</a>
+        <a href="https://wa.me/5500000000000?text=Quero%20agendar%20na%20Corte%20e%20Dobra"><i
+                    class="fa-brands fa-whatsapp"></i>Agendar Agora</a>
+        
 
 
     </section>
+
+    <!--REDE SOCIAL-->
     <section class="instagram fade">
         <h2 style="margin-bottom:20px;font-family:'Cinzel',serif;">Siga no Instagram</h2>
-        <p>Acompanhe nossos cortes e transformações diariamente.</p>
+        <p class="corte">Acompanhe nossos cortes e transformações diariamente.</p>
         <br>
-        <a href="https://instagram.com/SEUUSUARIO" target="_blank">@SEUUSUARIO</a>
+        <a class="card" href="https://instagram.com/SEUUSUARIO"><i class="fa-brands fa-instagram"></i></a>
     </section>
+
+    <!--FOOTER-->
     <footer>
-        © 2026 Corte e Dobra - Barbearia Premium | Todos os direitos reservados
+        © 2026 Gilded Barbers - Barbearia Premium | Todos os direitos reservados
     </footer>
 </body>
 
