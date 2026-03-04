@@ -55,16 +55,13 @@ nav a:hover {
 
 /* HERO */
 .hero {
-  height: 100vh;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438")
-      center/cover;
-  display: flex;
-  align-items: center;
+  background-image: url("img/tesouras.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding-top: 200px;
+  position: relative;
   text-align: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .hero h1 {
@@ -90,7 +87,7 @@ nav a:hover {
 
 .sobre img {
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
   border-radius: 5px;
 }
 
@@ -196,32 +193,6 @@ nav a:hover {
   color: var(--text-muted);
 }
 
-/* INSTAGRAM */
-.instagram {
-  text-align: center;
-  background: #111;
-}
-button a {
- align-items: center;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
-    color: #1d1d1d;
-    display: flex;
-    font-size: 1.25rem;
-    height: 50px;
-    justify-content: center;
-    width: 55px;
-    text-decoration: none;
-}
-button a:hover {
-   box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color .3s ease;
-}
-.corte {
-  color: #ffff;
-}
-
 /* CTA FINAL */
 .cta {
   background-image: url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1");
@@ -244,11 +215,147 @@ button a:hover {
   position: relative;
   z-index: 2;
 }
+.contato {
+  padding: 60px 20px;
+  background: rgba(249, 249, 249, 0.4);
+  border-radius: 5px;
+}
+
+.container-contato {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-contato {
+  flex: 1;
+  min-width: 280px;
+}
+
+.info-contato h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.info-contato p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #25d366;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.1);
+}
+
+.mapa {
+  border-radius: 5px;
+  flex: 1;
+  min-width: 280px;
+}
+
+/* INSTAGRAM */
+.instagram-fade {
+  background: rgba(73, 64, 11, 0.8);
+  padding: 40px;
+}
+
+.insta-card {
+  text-align: center;
+}
+
+/* Título e Parágrafo */
+.insta-card h2 {
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  color: #c6a85b;
+}
+
+.insta-card p {
+  color: #e6e2e2;
+  margin-bottom: 20px;
+}
+
+/* Botão com Gradiente Oficial do Instagram */
+.insta-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Efeito Hover no Botão */
+.insta-btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(193, 53, 132, 0.4);
+}
+
+/*Botão flutuante do whatsapp*/
+.whatsapp-float {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* Cor oficial */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebe5d;
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+}
+
 footer {
   background-color: #1e1e1e;
   color: #c6a85b;
   text-align: center;
-  padding: 40px 10%;
+  padding: 10px 10%;
 }
 
 /* RESPONSIVO */
