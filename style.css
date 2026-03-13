@@ -44,6 +44,7 @@ nav ul {
 }
 
 nav a {
+  font-size: 20px;
   text-decoration: none;
   color: var(--text-light);
   transition: 0.3s;
@@ -52,6 +53,43 @@ nav a {
 nav a:hover {
   color: #d8ab39;
 }
+
+/* BOTÃO HAMBURGUER */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #ebae16;
+  cursor: pointer;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+  nav ul {
+    border-radius: 5px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(22, 30, 48, 0.95);
+    width: 35%;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    margin: 28px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+}
+
 
 /* HERO */
 .hero {
@@ -360,7 +398,7 @@ footer {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-  .hero h1 {
+  .hero h1, nav {
     font-size: 34px;
   }
   section {
