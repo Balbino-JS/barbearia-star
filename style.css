@@ -67,17 +67,21 @@ nav a:hover {
 
   nav ul {
     border-radius: 5px;
+    font-size: 14px;
     position: absolute;
     top: 70px;
     right: 0;
     background: rgba(22, 30, 48, 0.95);
-    width: 35%;
+    width: 45%;
     flex-direction: column;
     text-align: center;
     gap: 1.5rem;
-    margin: 28px;
-    padding: 20px 0;
+    margin: 20px;
+    padding: 5px 0;
     display: none;
+  }
+  nav h1 {
+    font-size: 34px;
   }
 
   nav ul.active {
@@ -196,6 +200,46 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
+/* TABLET */
+@media (max-width: 900px) {
+
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    width: 45%;
+  }
+
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  .servicos h2 {
+    font-size: 28px;
+  }
+
+  .cards {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+}
+
 /* ABOUT */
 .about-body {
   background-color: rgb(247, 243, 237);
@@ -229,6 +273,48 @@ nav a:hover {
 .about p {
   max-width: 500px;
   color: var(--text-muted);
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about img {
+    margin-right: 0;
+    width: 80%;
+    height: auto;
+  }
+
+  .about p {
+    max-width: 600px;
+  }
+
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  .about {
+    gap: 2rem;
+    padding: 0 20px;
+  }
+
+  .about img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .about p {
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
 }
 
 /* CTA FINAL */
@@ -396,12 +482,113 @@ footer {
   padding: 10px 10%;
 }
 
-/* RESPONSIVO */
+/* RESPONSIVIDADE GLOBAL MOBILE */
 @media (max-width: 768px) {
-  .hero h1, nav {
-    font-size: 34px;
-  }
+
   section {
-    padding: 70px 7%;
+    padding: 60px 20px;
   }
+
+  h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  /* HERO */
+  .hero {
+    padding-top: 150px;
+    background-attachment: scroll;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    padding: 0 10px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    margin: auto;
+    padding: 0 10px;
+  }
+
+  /* SOBRE (primeira seção) */
+  .sobre {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .sobre img {
+    max-width: 250px;
+  }
+
+  .sobre-text {
+    max-width: 100%;
+  }
+
+  /* GALERIA */
+  .galeria-grid {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  .galeria-grid img {
+    height: 300px;
+  }
+
+  /* SERVIÇOS */
+  .cards {
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* ABOUT */
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .about p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  /* CONTATO */
+  .container-contato {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mapa iframe {
+    height: 250px;
+  }
+
+  /* INSTAGRAM */
+  .instagram-fade {
+    padding: 30px 20px;
+  }
+
+  /* BOTÃO WHATSAPP */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-float svg {
+    width: 26px;
+    height: 26px;
+  }
+
 }
