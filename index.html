@@ -18,6 +18,7 @@
     <meta name="description">
 
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <meta name="description" content="Dê um upgrade no seu visual hoje mesmo!">
     <meta name="description" content="Gilded Barbes você encontra profissionais qualificados para barba e cabelo.">
@@ -28,6 +29,7 @@
 </head>
 
 <body>
+    <!--Links de navegação-->
     <nav aria-laabel="Menu proncipal">
         <h1>Gilded Barbers</h1>
 
@@ -43,7 +45,7 @@
         </ul>
 
     </nav>
-
+    <!--hero-->
     <section class="hero" aria-label="Aqui mostra conteúdo de slogan">
         <div class="hero-content">
             <h1>EXCLUSIVIDADE EM CADA DETALHE</h1>
@@ -65,70 +67,87 @@
     </section>
 
     <!-- VITRINE -->
-    <section class="fade" id="vitrine" aria-label="Demonstração das imagens que estão na vitrine">
-        <h2 style="text-align:center;margin-bottom:60px;font-family:'Cinzel',serif;">Nosso Trabalhos</h2>
+    <section class="fade" id="vitrine" aria-label="Galeria de trabalhos da barbearia">
+        <h2 style="text-align:center;margin-bottom:60px;font-family:'Cinzel',serif;">Nossos Trabalhos</h2>
         <div class="galeria-grid">
-            <img src="img/pexels-aviz-3891347.jpg">
-            <img src="img/pexels-khezez-9025142.jpg">
-            <img src="img/pexels-leonardokfn-7781852.jpg">
-            <img src="img/pexels-lukeni-theking-41036885-7298366.jpg">
-            <img src="img/pexels-rdne-8313173.jpg">
-            <img src="img/pexels-salomonjr10-6650040.jpg">
-            <img src="img/pexels-ralph-rabago-3214804.jpg">
-            <img src="img/pexels-ladoo-4146419.jpg">
-            <img src="img/pexels-ilyas-6897800.jpg">
+            <img src="img/pexels-aviz-3891347.jpg" alt="Corte de cabelo masculino degradê" loading="lazy">
+            <img src="img/pexels-khezez-9025142.jpg" alt="Barba desenhada com navalha" loading="lazy">
+            <img src="img/pexels-leonardokfn-7781852.jpg" alt="Serviço de barboterapia" loading="lazy">
+            <img src="img/pexels-lukeni-theking-41036885-7298366.jpg" alt="Corte clássico tesoura" loading="lazy">
+            <img src="img/pexels-rdne-8313173.jpg" alt="Ambiente da barbearia Gilded Barbes" loading="lazy">
+            <img src="img/pexels-salomonjr10-6650040.jpg" alt="Finalização com pomada" loading="lazy">
+            <img src="img/pexels-ralph-rabago-3214804.jpg" alt="Corte de cabelo moderno" loading="lazy">
+            <img src="img/pexels-ladoo-4146419.jpg" alt="Detalhe de barba bem cuidada" loading="lazy">
+            <img src="img/pexels-ilyas-6897800.jpg" alt="Cliente satisfeito na barbearia" loading="lazy">
         </div>
     </section>
 
     <!-- SERVIÇOS -->
-    <section class="servicos" id="servicos" aria-label="Catões que mostra os valores detodos os serviços da barbearia">
+    <section class="servicos" id="servicos" aria-label="Cartões de serviços da barbearia">
         <h2 style="margin-bottom:50px;">Serviços</h2>
+        <h4>Experiência Completa em Estilo e Cuidado</h4>
+
         <div class="cards">
+
             <div class="card">
+                <i data-lucide="scissors"></i>
                 <h3>Corte</h3>
                 <p>Consultoria + acabamento na navalha</p>
                 <strong>R$ 40</strong>
             </div>
 
             <div class="card">
+                <i data-lucide="crown"></i>
                 <h3>Corte Premium</h3>
                 <p>Desenho + hidratação + navalha</p>
                 <strong>R$ 110</strong>
             </div>
+
             <div class="card">
+                <i data-lucide="users"></i>
                 <h3>Corte + Barba</h3>
                 <p>Toalha quente + modelagem completa</p>
                 <strong>R$ 80</strong>
             </div>
 
             <div class="card">
+                <i data-lucide="user"></i>
                 <h3>Barba</h3>
                 <p>Consultoria + acabamento na navalha</p>
                 <strong>R$ 40</strong>
             </div>
+
             <div class="card">
+                <i data-lucide="sparkles"></i>
                 <h3>Barba Premium</h3>
                 <p>Desenho + hidratação + navalha</p>
                 <strong>R$ 60</strong>
             </div>
+
             <div class="card">
-                <h3>Sobracelha</h3>
+                <i data-lucide="eye"></i>
+                <h3>Sobrancelha</h3>
                 <p>Modelagem</p>
                 <strong>R$ 20</strong>
             </div>
+
             <div class="card">
+                <i data-lucide="blade"></i>
                 <h3>Acabamento</h3>
                 <p>Navalha</p>
                 <strong>R$ 20</strong>
             </div>
+
             <div class="card">
+                <i data-lucide="droplet"></i>
                 <h3>Selagem</h3>
                 <strong>R$ 80</strong>
             </div>
+
         </div>
     </section>
 
-    <!-- SOBRE -->
+      <!-- SOBRE -->
     <section id="about" class="about-body" aria-label="Seção onde conta um pouco sober a barbearia">
         <h2 class="section-title">Sobre Nós</h2>
         <div class="about">
@@ -224,7 +243,55 @@
     <footer>
         © 2026 Gilded Barbers - Barbearia Premium | Todos os direitos reservados
     </footer>
+
+    <div id="modal" class="modal" aria-label="Modal de over sobre as imagens.">
+        <span class="fechar">&times;</span>
+        <img class="modal-conteudo" id="imgModal">
+    </div>
+
+
 </body>
+
+<script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("imgModal");
+    const fechar = document.querySelector(".fechar");
+
+    // pega todas as imagens da galeria
+    const imagens = document.querySelectorAll(".galeria-grid img");
+
+    imagens.forEach(img => {
+        img.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+        });
+    });
+
+    // fechar no X
+    fechar.onclick = () => {
+        modal.style.display = "none";
+    };
+
+    // fechar clicando fora da imagem
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+
+    // fechar com ESC
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            modal.style.display = "none";
+        }
+    });
+</script>
+
+<script>
+    lucide.createIcons();
+</script>
+
 <script src="script.js"></script>
 
 </html>
