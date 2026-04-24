@@ -250,22 +250,116 @@ nav a:hover {
   }
 }
 
-/* SOBRE */
+/* --- SEÇÃO SOBRE --- */
 .sobre {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
+    background: #111;
+    padding: 100px 20px;
+    position: relative;
 }
 
-.sobre img {
-  border-radius: 5px;
-  max-width: 300px;
+.container-sobre {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.sobre-grid {
+  align-items: center;
+  display: flex;
+    flex-wrap: wrap;
+    gap: 80px; 
+  }
+
+.sobre-image-wrapper {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.img-premium {
+  border: 1px solid rgba(198, 168, 91, 0.4);
+  border-radius: 15px;
+  box-shadow: 20px 20px 0px -5px #c6a85b; 
+  max-width: 450px;
+  transition: 0.5s ease;
   width: 100%;
 }
 
+.img-premium:hover {
+  box-shadow: 10px 10px 0px -5px #c6a85b;
+    transform: translateY(-10px);
+}
+
+/* Texto e Tipografia */
 .sobre-text {
-  max-width: 500px;
+    flex: 1.2;
+    min-width: 300px;
+}
+
+.sobre-text h2 {
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+.sobre-text p {
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.sobre-text strong {
+    color: #c6a85b;
+}
+
+/* Mini Estatísticas */
+.sobre-stats {
+  border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    padding-top: 30px;
+}
+
+.stat-item strong {
+  color: #c6a85b;
+    display: block;
+    font-size: 28px;
+}
+
+.stat-item span {
+    color: #777;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+@media (max-width: 992px) {
+    .sobre-grid {
+        flex-direction: column;
+        gap: 60px;
+        text-align: center;
+    }
+    
+    .img-premium {
+        box-shadow: 0px 15px 30px rgba(0,0,0,0.5);
+    }
+
+    .sobre-stats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .sobre { padding: 60px 15px;
+     }
+    .sobre-text h2 { font-size: 32px; 
+    }
+    .sobre-stats { gap: 20px;
+     }
 }
 
 /* GALERIA */
@@ -500,7 +594,7 @@ nav a:hover {
 }
 
 .about-body {
-  background: #151515;
+  background: #4b4747;
   padding: 100px 20px;
 }
 
