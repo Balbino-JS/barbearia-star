@@ -70,7 +70,6 @@ nav a:hover {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-
   nav ul {
     background: rgba(22, 30, 48, 0.95);
     border-radius: 5px;
@@ -97,9 +96,7 @@ nav a:hover {
   .menu-toggle {
     display: block;
   }
-
 }
-
 
 /* HERO */
 .hero {
@@ -143,7 +140,6 @@ nav a:hover {
   max-width: 500px;
 }
 
-
 /* GALERIA */
 .fade {
   background: rgba(25, 25, 27, 0.8);
@@ -165,11 +161,13 @@ nav a:hover {
   border-radius: 8px;
   object-fit: cover;
   width: 100%;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .galeria-grid img:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   transform: scale(1.03);
   z-index: 1;
 }
@@ -195,7 +193,7 @@ nav a:hover {
 
 /*modal*/
 .modal {
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   display: none;
   height: 100%;
   padding-top: 50px;
@@ -217,8 +215,12 @@ nav a:hover {
 }
 
 @keyframes zoom {
-  from {transform: scale(0.7);}
-  to {transform: scale(1);}
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .fechar {
@@ -253,7 +255,7 @@ nav a:hover {
 }
 
 .card {
-   background: #1e1e1e;
+  background: #1e1e1e;
   border: 1px solid #c6a85b;
   border-radius: 10px;
   padding: 25px 15px;
@@ -265,7 +267,7 @@ nav a:hover {
   cursor: pointer;
   filter: brightness(1.2);
   transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   border-color: #d8ab39;
 }
 .servicos h4 {
@@ -278,15 +280,14 @@ nav a:hover {
   height: 45px;
   margin-bottom: 15px;
   width: 45px;
-   /* brilho suave */
+  /* brilho suave */
   filter: drop-shadow(0 0 5px rgba(198, 168, 91, 0.6));
   transition: all 0.3s ease;
 }
 .card:hover i {
   color: #ffd700;
 
-  filter: 
-    drop-shadow(0 0 8px rgba(255, 215, 0, 0.8))
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8))
     drop-shadow(0 0 15px rgba(255, 215, 0, 0.6))
     drop-shadow(0 0 25px rgba(255, 215, 0, 0.4));
 
@@ -328,27 +329,25 @@ nav a:hover {
 
 /* TABLET */
 @media (max-width: 900px) {
- .servicos {
+  .servicos {
     margin-top: 40px;
   }
   .cards {
     grid-template-columns: repeat(3, 1fr);
     max-width: 500px; /* 🔥 reduz largura total */
-    margin: 0 auto;   /* 🔥 centraliza */
+    margin: 0 auto; /* 🔥 centraliza */
     gap: 25px;
   }
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-  
-
   .servicos h2 {
     font-size: 28px;
   }
 
   .cards {
-     grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     padding: 0 10px;
   }
@@ -364,74 +363,114 @@ nav a:hover {
   .card p {
     font-size: 14px;
   }
-
 }
 
 /* ABOUT */
+/* Container Geral */
+.container-about {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .about-body {
   background: #151515;
-  padding: 80px 20px;
+  padding: 100px 20px;
 }
 
-.section-title {
-  text-align: center;
-  color: #c6a85b;
-  margin-bottom: 50px;
-  font-size: 32px;
-}
-
-/* CONTAINER */
-.about {
+/* Layout Grid */
+.about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  max-width: 1100px;
-  align-items: center;
+  gap: 60px;
+  align-items: center; /* Alinha imagem e texto verticalmente */
 }
 
-/* IMAGEM */
-.about img {
+/* Estilização da Imagem */
+.about-image img {
   width: 100%;
-  max-width: 550px;
+  height: auto;
   border-radius: 10px;
   border: 1px solid #c6a85b;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  transition: 0.4s;
-  margin-left: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease;
 }
 
-.about img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
+.about-image img:hover {
+  transform: translateY(-10px);
 }
 
-/* TEXTO (CARD) */
-.about p {
+/* Card de Texto */
+.about-text {
   background: #1e1e1e;
-  padding: 25px;
-  border-radius: 10px;
-  border: 1px solid #c6a85b;
-  color: #ccc;
-  line-height: 1.7;
-  margin-left: px;
-  font-size: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  padding: 40px;
+  border-radius: 12px;
+  border-left: 4px solid #c6a85b; /* Detalhe lateral elegante */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
+
+.about-text h3 {
+  color: #c6a85b;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about-text .subtitle {
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: #bbb;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+/* Lista de Especialidades */
+.specialties {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.spec-item strong {
+  color: #d8ab39;
+  display: block;
+  font-size: 15px;
+}
+
+.spec-item span {
+  color: #999;
+  font-size: 14px;
+}
+
+/* Citação Final */
+.quote {
+  font-style: italic;
+  color: #c6a85b;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* --- RESPONSIVIDADE --- */
+
 /* TABLET */
-@media (max-width: 900px) {
-  .about {
-    grid-template-columns: 1fr;
-    text-align: center;
+@media (max-width: 992px) {
+  .about-content {
+    grid-template-columns: 1fr; /* Empilha em telas menores */
+    gap: 40px;
   }
 
-  .about img,
-  .about p {
+  .about-image {
+    max-width: 500px;
     margin: 0 auto;
   }
 
-  .about p {
-    max-width: 600px;
-    margin: 0 auto;
+  .about-text {
+    padding: 30px;
   }
 }
 
@@ -442,122 +481,364 @@ nav a:hover {
   }
 
   .section-title {
-    font-size: 26px;
+    font-size: 28px;
+    margin-bottom: 30px;
   }
 
-  .about {
-    gap: 25px;
+  .about-text h3 {
+    font-size: 20px;
   }
 
-  .about p {
-    font-size: 14px;
+  .about-text {
     padding: 20px;
+  }
+}
+/*OBJETIVO*/
+/* SEÇÃO OBJETIVO */
+.objective-section {
+  background: #1a1a1a; /* Tom levemente diferente para separar as seções */
+  padding: 100px 20px;
+  border-top: 1px solid rgba(198, 168, 91, 0.1);
+}
+
+.container-objective {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.objective-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.subtitle-gold {
+  color: #c6a85b;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Grid Layout */
+.objective-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Texto maior à esquerda */
+  gap: 50px;
+  align-items: start;
+}
+
+.objective-main-text h3 {
+  font-size: 28px;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+.objective-main-text h3 strong {
+  color: #c6a85b;
+}
+
+.objective-main-text p {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Pilares (Cards Pequenos) */
+.objective-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pillar-card {
+  background: #222;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: 0.3s;
+}
+
+.pillar-card:hover {
+  border-color: #c6a85b;
+  background: #1e1e1e;
+  transform: translateX(-5px);
+}
+
+.pillar-card h4 {
+  color: #d8ab39;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.pillar-card p {
+  font-size: 14px;
+  color: #999;
+  line-height: 1.5;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* TABLET */
+@media (max-width: 992px) {
+  .objective-grid {
+    grid-template-columns: 1fr; /* Empilha no tablet */
+    gap: 40px;
+  }
+
+  .objective-main-text {
+    text-align: center;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .objective-section {
+    padding: 60px 15px;
+  }
+
+  .objective-main-text h3 {
+    font-size: 22px;
+  }
+
+  .pillar-card {
+    text-align: center;
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-5px); /* No mobile, sobe em vez de ir pro lado */
   }
 }
 
 /* CTA FINAL */
-.cta {
-  background-image: url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  text-align: center;
+/* --- CONFIGURAÇÃO DA SEÇÃO --- */
+.cta-contato {
+  background: #f4f1ea; /* Fundo claro para contrastar com os elementos escuros */
+  padding: 80px 20px;
+  font-family: "Inter", sans-serif;
 }
-.cta::after {
-  background: rgba(0, 0, 0, 0.5);
+
+.container-premium {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.section-title-premium {
+  text-align: center;
+  color: #3d2b1f;
+  font-size: 42px;
+  font-family: "Playfair Display", serif; /* Fonte elegante */
+  margin-bottom: 50px;
+}
+
+/* --- ESTILO DAS CAIXAS (COURO/MADEIRA) --- */
+.caixa-premium {
+  background: linear-gradient(
+    145deg,
+    #2c1e14,
+    #3d2b1f
+  ); /* Efeito de profundidade */
+  border: 2px solid #c6a85b; /* Borda dourada */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow:
+    10px 10px 20px rgba(0, 0, 0, 0.3),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.caixa-premium:hover {
+  transform: translateX(10px);
+}
+
+/* Simulação de textura de couro nas caixas específicas */
+.endereco-box,
+.horario-box {
+  background: #2a1b12
+    url("https://www.transparenttextures.com/patterns/leather.png");
+}
+
+.icon-premium {
+  font-size: 30px; /* Tamanho do ícone */
+  color: #c6a85b; /* Cor dourada principal */
+  min-width: 50px; /* Garante que o ícone não "esprema" o texto */
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-box p {
+  color: #e0d5c1;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.texto-box strong,
+.endereco-line1,
+.telefone-line {
+  font-weight: bold;
+  color: #c6a85b;
+  font-size: 18px;
+}
+
+/* --- MOLDURA DO MAPA --- */
+.moldura-mapa {
+  background: #3d2b1f; /* Madeira escura */
+  padding: 15px;
+  border: 8px solid #2a1b12;
+  border-radius: 4px;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+/* Cantoneiras douradas do mapa */
+.moldura-mapa::before {
   content: "";
   position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  width: 100%;
-}
-.cta-content {
-  position: relative;
-  z-index: 2;
-}
-.contato {
-  background: rgba(249, 249, 249, 0.4);
-  border-radius: 5px;
-  padding: 60px 20px;
+  top: -10px;
+  left: -10px;
+  width: 40px;
+  height: 40px;
+  border-top: 4px solid #c6a85b;
+  border-left: 4px solid #c6a85b;
 }
 
-.container-contato {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  justify-content: space-between;
-  margin: auto;
-  max-width: 1100px;
+.map-premium {
+  height: 400px;
+  background: #eee;
+  overflow: hidden;
 }
 
-.info-contato {
-  flex: 1;
-  min-width: 280px;
+/* --- BOTÃO WHATSAPP PREMIUM --- */
+.moldura-inferior {
+  text-align: center;
+  margin-top: 40px;
 }
 
-.info-contato h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.info-contato p {
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.btn-whatsapp {
-  background-color: #25d366;
-  display: inline-block;
-  border-radius: 5px;
+.btn-whatsapp-premium {
+  background: #25d366; /* Verde oficial do WhatsApp */
   color: white;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 20px;
-  padding: 12px 25px;
-  transition:
-  transform 0.3s ease,
-  filter 0.3s ease;
+  padding: 15px 35px;
+  border-radius: 50px;
   text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-flex; /* Alinha ícone e texto perfeitamente */
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Espaço entre o ícone e o texto */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.btn-whatsapp:hover {
-  background-color: #1ebe5d;
-  transform: scale(1.1);
+.btn-whatsapp-premium i {
+  font-size: 26px; /* Tamanho do ícone */
 }
 
-.mapa {
-  border-radius: 5px;
-  flex: 1;
-  min-width: 280px;
+.btn-whatsapp-premium:hover {
+  transform: translateY(-5px) scale(1.03);
+  background: #128c7e; /* Verde um pouco mais escuro no hover */
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+}
+
+.icon-whatsapp {
+  width: 25px;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* TABLET */
+@media (max-width: 992px) {
+  .container-premium {
+    grid-template-columns: 1fr; /* Uma coluna só */
+    gap: 40px;
+  }
+
+  .coluna-info {
+    order: 2; /* Texto vai para baixo do mapa se preferir */
+  }
+
+  .coluna-mapa {
+    order: 1;
+  }
+
+  .section-title-premium {
+    font-size: 32px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .cta-contato {
+    padding: 40px 15px;
+  }
+
+  .caixa-premium {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .caixa-premium:hover {
+    transform: translateY(-5px);
+  }
+
+  .map-premium {
+    height: 300px;
+  }
+
+  .btn-whatsapp-premium {
+    width: 90%;
+    font-size: 16px;
+    padding: 12px 20px;
+  }
 }
 
 /* INSTAGRAM */
 .instagram-fade {
-  background: rgba(73, 64, 11, 0.8);
-  padding: 40px;
-}
+  background:
+    linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.9)),
+    url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+    border-top: 1px solid rgba(198, 168, 91, 0.2);
+    padding: 80px 20px;
+  }
 
-.insta-card {
-  text-align: center;
-}
-
-/* Título e Parágrafo */
-.insta-card h2 {
+.insta-main-icon {
   color: #c6a85b;
-  font-family: sans-serif;
+  display: block;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.insta-card h2 {
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
 .insta-card p {
-  color: #e6e2e2;
-  margin-bottom: 20px;
+  color: #999;
+  font-size: 18px;
+  margin-bottom: 30px;
 }
-
-/* Botão com Gradiente Oficial do Instagram */
 .insta-btn {
+  align-items: center;
   background: linear-gradient(
     45deg,
     #405de6,
@@ -566,148 +847,140 @@ nav a:hover {
     #c13584,
     #e1306c,
     #fd1d1d
-    );
-    border-radius: 8px;
-    color: white;
-    display: inline-block;
-    font-weight: bold;
-    padding: 12px 25px;
-    text-decoration: none;
-    transition:
-    filter 0.3s ease,
-    transform 0.3s ease;
+  );
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(193, 53, 132, 0.3);
+  color: white;
+  display: inline-flex;
+  font-weight: bold;
+  gap: 10px;
+  padding: 15px 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* Efeito Hover no Botão */
 .insta-btn:hover {
-  box-shadow: 0 8px 15px rgba(193, 53, 132, 0.4);
-  filter: brightness(1.1);
-  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(193, 53, 132, 0.5);
+  filter: brightness(1.2);
+  transform: translateY(-5px);
 }
 
-/*Botão flutuante do whatsapp*/
 .whatsapp-float {
   align-items: center;
-  background-color: #25d366; /* Cor oficial */
-  bottom: 20px;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  background-color: #25d366;
+  bottom: 30px;
+  border-radius: 50px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
   display: flex;
-  height: 40px;
+  font-size: 30px;
+  height: 60px;
   justify-content: center;
   position: fixed;
-  right: 20px;
-  width: 40px;
-  transition: 0.3s ease;
-  z-index: 9999;
+  right: 30px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+  z-index: 1000;
+  width: 60px;
 }
 
 .whatsapp-float:hover {
-  background-color: #1ebe5d;
-  transform: scale(1.1);
+  background-color: #128c7e;
+  transform: scale(1.1) rotate(10deg);
 }
 
-.whatsapp-float svg {
-  height: 30px;
-  width: 30px;
-}
-
-footer {
-  background-color: #1e1e1e;
-  color: #c6a85b;
-  padding: 10px 10%;
+/* --- FOOTER --- */
+.main-footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid #1a1a1a;
+  padding: 40px 20px;
   text-align: center;
 }
 
-/* RESPONSIVIDADE GLOBAL MOBILE */
-@media (max-width: 768px) {
+.footer-content p {
+  color: #c6a85b;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
 
-  section {
-    padding: 60px 20px;
+.footer-divider {
+  background: #c6a85b;
+  height: 2px;
+  margin: 15px auto;
+  opacity: 0.5;
+  width: 50px;
+}
+
+.footer-subtext {
+  color: #555 !important;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* --- RESPONSIVIDADE DA SEÇÃO FINAL --- */
+
+@media (max-width: 992px) {
+  .instagram-fade {
+    padding: 60px 30px;
   }
 
-  h2 {
-    font-size: 26px;
-    text-align: center;
+  .insta-card h2 {
+    font-size: 28px;
   }
 
-  /* HERO */
-  .hero {
-    background-attachment: scroll;
-    padding-top: 150px;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-    padding: 0 10px;
-  }
-
-  .hero p {
+  .insta-card p {
     font-size: 16px;
-    margin: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .instagram-fade {
+    padding: 50px 15px;
+  }
+
+  .insta-main-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .insta-card h2 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .insta-card p {
+    font-size: 14px;
+    margin-bottom: 25px;
     padding: 0 10px;
   }
 
-  /* SOBRE (primeira seção) */
-  .sobre {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-
-  .sobre img {
-    max-width: 250px;
-  }
-
-  .sobre-text {
-    max-width: 100%;
-  }
-
- 
-  /* ABOUT */
-  .about {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about img {
-    height: auto;
-    margin-right: 0;
-    max-width: 300px;
+  .insta-btn {
+    font-size: 16px;
+    justify-content: center;
+    max-width: 280px;
+    padding: 12px 20px;
     width: 100%;
   }
 
-  .about p {
-    font-size: 14px;
-    line-height: 1.6;
-    padding: 0 10px;
-  }
-
-  /* CONTATO */
-  .container-contato {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .mapa iframe {
-    height: 250px;
-  }
-
-  /* INSTAGRAM */
-  .instagram-fade {
-    padding: 30px 20px;
-  }
-
-  /* BOTÃO WHATSAPP */
   .whatsapp-float {
+    bottom: 20px;
+    font-size: 25px;
     height: 50px;
+    right: 20px;
     width: 50px;
   }
 
-  .whatsapp-float svg {
-    height: 26px;
-    width: 26px;
+
+  .main-footer {
+    padding: 30px 15px;
   }
 
+  .footer-content p {
+    font-size: 13px;
+  }
+
+  .footer-subtext {
+    font-size: 10px;
+  }
 }
