@@ -1,7 +1,7 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 body {
@@ -43,8 +43,8 @@ nav h1 {
 }
 
 nav ul {
-  display: flex;
   color: #c6a85b;
+  display: flex;
   gap: 2rem;
   list-style: none;
 }
@@ -62,9 +62,9 @@ nav a:hover {
 
 /* BOTÃO HAMBURGUER */
 .menu-toggle {
-  display: none;
   color: #ebae16;
   cursor: pointer;
+  display: none;
   font-size: 28px;
 }
 
@@ -100,26 +100,154 @@ nav a:hover {
 
 /* HERO */
 .hero {
+  align-items: center;
   background-image: url("img/tesouras.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  padding-top: 200px;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  min-height: 600px;
   position: relative;
+  overflow: hidden;
   text-align: center;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5)
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  animation: fadeInUp 1s ease-out;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  color: #c6a85b;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .hero h1 {
   color: white;
-  font-size: 48px;
+  font-family: "Playfair Display", serif;
+  font-size: 64px;
+  line-height: 1.1;
   margin-bottom: 20px;
 }
 
-.hero p {
+.text-gold {
   color: #c6a85b;
-  font-size: 18px;
-  margin-bottom: 30px;
-  max-width: 600px;
+}
+
+.hero p {
+  color: #e0e0e0;
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0 auto 40px;
+  max-width: 700px;
+}
+
+/* Botões do Hero */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: #c6a85b;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #111;
+  padding: 15px 35px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-secondary {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  padding: 15px 35px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #d8ab39;
+  transform: translateY(-3px);
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #111;
+  transform: translateY(-3px);
+}
+
+/* Animação de Entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* TABLET */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+  .hero p {
+    font-size: 18px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .hero {
+    background-attachment: scroll; /* Melhora performance mobile */
+    height: auto;
+    padding: 150px 20px 100px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
 }
 
 /* SOBRE */
@@ -148,8 +276,8 @@ nav a:hover {
 
 .galeria-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
   max-width: 1000px;
   padding: 20px;
@@ -160,10 +288,10 @@ nav a:hover {
   background-color: #1a1a1a;
   border-radius: 8px;
   object-fit: cover;
-  width: 100%;
   transition:
     transform 0.4s ease,
     box-shadow 0.4s ease;
+  width: 100%;
 }
 
 .galeria-grid img:hover {
@@ -175,8 +303,8 @@ nav a:hover {
 /* 📱 MOBILE */
 @media (max-width: 480px) {
   .galeria-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
     padding: 10px;
   }
 }
@@ -186,8 +314,8 @@ nav a:hover {
     margin-bottom: 60px;
   }
   .galeria-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -196,10 +324,10 @@ nav a:hover {
   background-color: rgba(0, 0, 0, 0.9);
   display: none;
   height: 100%;
-  padding-top: 50px;
-  position: fixed;
   left: 0;
   margin-top: 60px;
+  position: fixed;
+  padding-top: 50px;
   top: 0;
   width: 100%;
   z-index: 999;
@@ -210,8 +338,8 @@ nav a:hover {
   border-radius: 10px;
   display: block;
   margin: auto;
-  max-width: 90%;
   max-height: 85vh;
+  max-width: 90%;
 }
 
 @keyframes zoom {
@@ -247,10 +375,10 @@ nav a:hover {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 🔥 3 colunas */
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  max-width: 1000px;
   margin: 0 auto;
+  max-width: 1000px;
   padding: 0 10px;
 }
 
@@ -264,11 +392,11 @@ nav a:hover {
   width: 100%;
 }
 .card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-color: #d8ab39;
   cursor: pointer;
   filter: brightness(1.2);
   transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  border-color: #d8ab39;
 }
 .servicos h4 {
   color: #ffffff;
@@ -277,11 +405,10 @@ nav a:hover {
 }
 .card i {
   color: #c6a85b;
+  filter: drop-shadow(0 0 5px rgba(198, 168, 91, 0.6));
   height: 45px;
   margin-bottom: 15px;
   width: 45px;
-  /* brilho suave */
-  filter: drop-shadow(0 0 5px rgba(198, 168, 91, 0.6));
   transition: all 0.3s ease;
 }
 .card:hover i {
@@ -310,10 +437,10 @@ nav a:hover {
 }
 
 .card strong {
-  display: block;
-  margin-top: 10px;
   color: #d8ab39;
+  display: block;
   font-size: 18px;
+  margin-top: 10px;
 }
 .servicos h2 {
   text-align: center;
@@ -333,10 +460,10 @@ nav a:hover {
     margin-top: 40px;
   }
   .cards {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 500px; /* 🔥 reduz largura total */
-    margin: 0 auto; /* 🔥 centraliza */
     gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
 
@@ -347,8 +474,8 @@ nav a:hover {
   }
 
   .cards {
-    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
     padding: 0 10px;
   }
 
@@ -368,8 +495,8 @@ nav a:hover {
 /* ABOUT */
 /* Container Geral */
 .container-about {
-  max-width: 1200px;
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 .about-body {
@@ -379,20 +506,20 @@ nav a:hover {
 
 /* Layout Grid */
 .about-content {
+  align-items: center;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center; /* Alinha imagem e texto verticalmente */
+  grid-template-columns: 1fr 1fr;
 }
 
 /* Estilização da Imagem */
 .about-image img {
-  width: 100%;
-  height: auto;
   border-radius: 10px;
   border: 1px solid #c6a85b;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  height: auto;
   transition: transform 0.4s ease;
+  width: 100%;
 }
 
 .about-image img:hover {
@@ -402,10 +529,10 @@ nav a:hover {
 /* Card de Texto */
 .about-text {
   background: #1e1e1e;
-  padding: 40px;
   border-radius: 12px;
-  border-left: 4px solid #c6a85b; /* Detalhe lateral elegante */
+  border-left: 4px solid #c6a85b;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 40px;
 }
 
 .about-text h3 {
@@ -415,15 +542,15 @@ nav a:hover {
 }
 
 .about-text .subtitle {
-  font-weight: bold;
   color: #fff;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
 .about-text p {
   color: #bbb;
-  margin-bottom: 25px;
   font-size: 16px;
+  margin-bottom: 25px;
 }
 
 /* Lista de Especialidades */
@@ -447,12 +574,12 @@ nav a:hover {
 
 /* Citação Final */
 .quote {
-  font-style: italic;
-  color: #c6a85b;
   border-top: 1px solid #333;
+  color: #c6a85b;
+  font-style: italic;
+  font-size: 18px;
   padding-top: 20px;
   text-align: center;
-  font-size: 18px;
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -460,13 +587,13 @@ nav a:hover {
 /* TABLET */
 @media (max-width: 992px) {
   .about-content {
-    grid-template-columns: 1fr; /* Empilha em telas menores */
     gap: 40px;
+    grid-template-columns: 1fr; /* Empilha em telas menores */
   }
 
   .about-image {
-    max-width: 500px;
     margin: 0 auto;
+    max-width: 500px;
   }
 
   .about-text {
@@ -493,40 +620,40 @@ nav a:hover {
     padding: 20px;
   }
 }
+
 /*OBJETIVO*/
-/* SEÇÃO OBJETIVO */
 .objective-section {
-  background: #1a1a1a; /* Tom levemente diferente para separar as seções */
-  padding: 100px 20px;
+  background: #1a1a1a;
   border-top: 1px solid rgba(198, 168, 91, 0.1);
+  padding: 100px 20px;
 }
 
 .container-objective {
-  max-width: 1100px;
   margin: 0 auto;
+  max-width: 1100px;
 }
 
 .objective-header {
-  text-align: center;
   margin-bottom: 60px;
+  text-align: center;
 }
 
 .subtitle-gold {
   color: #c6a85b;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  display: block;
   font-size: 14px;
   font-weight: bold;
-  display: block;
+  letter-spacing: 3px;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 /* Grid Layout */
 .objective-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr; /* Texto maior à esquerda */
-  gap: 50px;
   align-items: start;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1.2fr 0.8fr;
 }
 
 .objective-main-text h3 {
@@ -575,8 +702,8 @@ nav a:hover {
 }
 
 .pillar-card p {
-  font-size: 14px;
   color: #999;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -585,8 +712,8 @@ nav a:hover {
 /* TABLET */
 @media (max-width: 992px) {
   .objective-grid {
-    grid-template-columns: 1fr; /* Empilha no tablet */
     gap: 40px;
+    grid-template-columns: 1fr;
   }
 
   .objective-main-text {
@@ -616,30 +743,31 @@ nav a:hover {
 /* CTA FINAL */
 /* --- CONFIGURAÇÃO DA SEÇÃO --- */
 .cta-contato {
-  background: #f4f1ea; /* Fundo claro para contrastar com os elementos escuros */
-  padding: 80px 20px;
+  background: #f4f1ea;
   font-family: "Inter", sans-serif;
+  padding: 80px 20px;
 }
 
 .container-premium {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
   align-items: center;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .section-title-premium {
-  text-align: center;
   color: #3d2b1f;
   font-size: 42px;
-  font-family: "Playfair Display", serif; /* Fonte elegante */
+  font-family: "Playfair Display", serif;
   margin-bottom: 50px;
+  text-align: center;
 }
 
 /* --- ESTILO DAS CAIXAS (COURO/MADEIRA) --- */
 .caixa-premium {
+  align-items: center;
   background: linear-gradient(
     145deg,
     #2c1e14,
@@ -647,14 +775,13 @@ nav a:hover {
   ); /* Efeito de profundidade */
   border: 2px solid #c6a85b; /* Borda dourada */
   border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
   box-shadow:
     10px 10px 20px rgba(0, 0, 0, 0.3),
     inset 2px 2px 5px rgba(255, 255, 255, 0.1);
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 20px;
   transition: transform 0.3s ease;
 }
 
@@ -670,20 +797,20 @@ nav a:hover {
 }
 
 .icon-premium {
-  font-size: 30px; /* Tamanho do ícone */
-  color: #c6a85b; /* Cor dourada principal */
-  min-width: 50px; /* Garante que o ícone não "esprema" o texto */
-  text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
-  display: flex;
   align-items: center;
+  color: #c6a85b;
+  display: flex;
+  font-size: 30px;
   justify-content: center;
+  min-width: 50px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .texto-box p {
   color: #e0d5c1;
-  margin: 0;
   line-height: 1.4;
+  margin: 0;
 }
 
 .texto-box strong,
@@ -706,26 +833,26 @@ nav a:hover {
 
 /* Cantoneiras douradas do mapa */
 .moldura-mapa::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 40px;
-  height: 40px;
-  border-top: 4px solid #c6a85b;
   border-left: 4px solid #c6a85b;
+  border-top: 4px solid #c6a85b;
+  content: "";
+  height: 40px;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  width: 40px;
 }
 
 .map-premium {
-  height: 400px;
   background: #eee;
+  height: 400px;
   overflow: hidden;
 }
 
 /* --- BOTÃO WHATSAPP PREMIUM --- */
 .moldura-inferior {
-  text-align: center;
   margin-top: 40px;
+  text-align: center;
 }
 
 .btn-whatsapp-premium {
@@ -765,12 +892,12 @@ nav a:hover {
 /* TABLET */
 @media (max-width: 992px) {
   .container-premium {
-    grid-template-columns: 1fr; /* Uma coluna só */
     gap: 40px;
+    grid-template-columns: 1fr;
   }
 
   .coluna-info {
-    order: 2; /* Texto vai para baixo do mapa se preferir */
+    order: 2;
   }
 
   .coluna-mapa {
@@ -814,9 +941,9 @@ nav a:hover {
   background:
     linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.9)),
     url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
-    border-top: 1px solid rgba(198, 168, 91, 0.2);
-    padding: 80px 20px;
-  }
+  border-top: 1px solid rgba(198, 168, 91, 0.2);
+  padding: 80px 20px;
+}
 
 .insta-main-icon {
   color: #c6a85b;
@@ -970,7 +1097,6 @@ nav a:hover {
     right: 20px;
     width: 50px;
   }
-
 
   .main-footer {
     padding: 30px 15px;
