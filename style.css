@@ -219,6 +219,10 @@ nav a:hover {
 
 /* TABLET */
 @media (max-width: 992px) {
+  .hero {
+    background-attachment: scroll;
+    background-image: url('./img/tesouras\ \(1\).webp');
+}
   .hero h1 {
     font-size: 48px;
   }
@@ -230,7 +234,8 @@ nav a:hover {
 /* MOBILE */
 @media (max-width: 600px) {
   .hero {
-    background-attachment: scroll; /* Melhora performance mobile */
+    background-attachment: scroll;
+    background-image: url('./img/tesouras\ \(1\).webp');
     height: auto;
     padding: 150px 20px 100px;
   }
